@@ -1,17 +1,19 @@
-def stringsConstruction(A, B):
-    str = list(B)
-    total = 0
-    run = True
-    while run:
-        for i in A:
-            if i in str:
-                str[str.index(i)] = False
-            else:
-                run= False
-        if run:
-            total += 1
-    return total
+# Define a procedure, factorial, that takes a natural number as its input, and
+# returns the number of ways to arrange the input number of items.
 
-print stringsConstruction('hnccv', 'hncvohcjhdfnhonxddcocjncchnvohchnjohcvnhjdhihsn')
+def factorial(n):
+    sum = 1
+    if n > 0:
+        return n * factorial(n-1)
+    return sum
 
-# 
+
+
+print factorial(0)
+#>>> 1
+
+print factorial(5)
+#>>> 120
+
+print factorial(10)
+#>>> 3628800
