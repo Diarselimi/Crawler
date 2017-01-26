@@ -8,16 +8,27 @@
 # Recursive Case:
 #    n > 1 : fibonacci(n) => fibonacci(n-1) + fibonacci(n-2)
 
-def fibonacci(n):
+# slower functions
+def fibonacciSlower(n):
     if n > 1:
         return fibonacci(n-1) + fibonacci(n-2)
     return n
 
+# faster function
+def fibonacci(n):
+    current = 0
+    after = 1
+    for i in range(0, n):
+        current, after = after, current+after
+    return current
 
 
 
 
-#print fibonacci(0)
+print fibonacci(36)
+#>>> 14930352
+
+print fibonacci(0)
 #>>> 0
 print fibonacci(1)
 #>>> 1
